@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_bg">
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:paddingLeft="@dimen/space_22"
+            android:paddingRight="@dimen/space_22"
+            android:src="@drawable/icon_left_arrow"
+            android:tag="0" />
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_10"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_160"
+        android:background="@color/main_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_display"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/space_10"
+                android:textColor="@android:color/white"
+                tools:text="中国工商银行\n卡号:622202******1209\n\n交易金额" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:text="99999999999.99" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_22"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="@string/input_password"
+        android:padding="@dimen/space_22"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="******" />
+
+
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:columnCount="3"
+        app:orientation="horizontal"
+        app:rowCount="4">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="1"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="2"
+            android:text="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="3"
+            android:text="3"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="4"
+            android:text="4"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="5"
+            android:text="5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="6"
+            android:text="6"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="7"
+            android:text="7"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="8"
+            android:text="8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="9"
+            android:text="9"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/clear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="10"
+            android:text="@string/backspace"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/tv0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="11"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:id="@+id/ensure"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/white_selector"
+            android:gravity="center"
+            android:tag="12"
+            android:text="@string/keyboard_ensure"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_number"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+    </android.support.v7.widget.GridLayout>
+</LinearLayout>
+

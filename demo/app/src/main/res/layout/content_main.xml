@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.lixia.demo.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0606ff"
+        android:orientation="horizontal">
+    <EditText
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:hint="商户号"
+        android:layout_marginRight="8dp"
+        android:background="#ffffff"
+        android:id="@+id/merCode"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:hint="终端号"
+            android:background="#ffffff"
+            android:layout_height="wrap_content"
+            android:id="@+id/termCode"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_number"
+        android:text="结果展示" />
+
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/downloadProgressBar"
+        android:visibility="gone"/>
+
+
+    <Button
+        android:text="激活"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/active" />
+
+    <Button
+        android:text="参数下载"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/downloadParams" />
+
+    <Button
+        android:text="终端秘钥下载"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/downloadParamsWithProgress" />
+    <Button
+        android:text="签到"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/signIn" />
+    <Button
+        android:text="发起交易"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deal" />
+    <Button
+        android:text="账单"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bills" />
+    <Button
+        android:text="结算"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/settle" />
+
+
+
+</LinearLayout>

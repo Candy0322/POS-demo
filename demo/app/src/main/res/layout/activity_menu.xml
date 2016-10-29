@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.lixia.demo.MenuActivity">
+
+    <EditText
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入金额"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/referenceNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="检索参考号"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/revAuthCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="原交易授权码"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/transDatetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="交易时间"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/tracenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="交易凭证号"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/batchNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="批次号"
+        android:textSize="10dp" />
+
+    <EditText
+        android:id="@+id/cardNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="卡号"
+        android:textSize="10dp" />
+
+
+    <TextView
+        android:id="@+id/tag_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff0000"
+        android:text="操作选项"
+        android:textSize="10sp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/cardDeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="刷卡消费" />
+
+            <Button
+                android:id="@+id/revokeConsume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="刷卡撤销" />
+
+            <Button
+                android:id="@+id/returnConsume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="刷卡退货" />
+
+            <Button
+                android:id="@+id/balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="余额查询" />
+
+            <Button
+                android:id="@+id/preAuth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预授权" />
+
+            <Button
+                android:id="@+id/revokePreAuth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预授权撤销" />
+
+            <Button
+                android:id="@+id/preAuthComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预授权完成" />
+
+            <Button
+                android:id="@+id/revokePreAuthComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="预授权完成撤销" />
+
+            <Button
+                android:id="@+id/consumeQr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫码消费" />
+
+            <Button
+                android:id="@+id/returnQr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫码退货" />
+
+            <Button
+                android:id="@+id/revokeQr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫码撤销" />
+
+            <Button
+                android:id="@+id/takeTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="小费" />
+
+            <Button
+                android:id="@+id/revokeTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="小费撤销" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

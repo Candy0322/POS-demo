@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CandyPos</string>
+    <string name="input_password">请输入密码</string>
+    <string name="keyboard_ensure">确定</string>
+    <string name="backspace">退格</string>
+    <string name="action_settings">设置</string>
+
+</resources>
