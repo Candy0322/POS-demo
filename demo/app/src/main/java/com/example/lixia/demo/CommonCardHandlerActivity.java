@@ -1,11 +1,9 @@
 package com.example.lixia.demo;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +13,6 @@ import com.cardinfolink.pos.listener.Callback;
 import com.cardinfolink.pos.sdk.CILRequest;
 import com.cardinfolink.pos.sdk.CILResponse;
 import com.cardinfolink.pos.sdk.CILSDK;
-import com.cardinfolink.pos.sdk.model.Trans;
 import com.cardinfolink.sdk.base.BaseCardActivity;
 import com.example.lixia.demo.utils.Utils;
 
@@ -39,12 +36,9 @@ public class CommonCardHandlerActivity extends BaseCardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_card_handler);
-
         mAmout = getIntent().getStringExtra(MENOY_AMOUT);
-
         TextView moneyView = (TextView) findViewById(R.id.takeMoney);
         moneyView.setText(mAmout);
-
     }
 
     @Override
@@ -281,12 +275,7 @@ public class CommonCardHandlerActivity extends BaseCardActivity {
         CILSDK.consume(request, cardType, new Callback<CILResponse>() {
             @Override
             public void onResult(CILResponse cilResponse) {
-                Intent intent = new Intent(CommonCardHandlerActivity.this, ResultActivity.class);
-                intent.putExtra(ResultActivity.EXCHANGE_RESULT, cilResponse.getTrans());
-                intent.putExtra(CommonCardHandlerActivity.EXCHANGE_TYPE, "consume");
-               startActivity(intent);
-
-
+                Utils.startResultActivity(CommonCardHandlerActivity.this, cilResponse.getTrans());
                 finish();
             }
 

@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -34,60 +31,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.content_main);
         //各控件
         mTextView = (TextView) findViewById(R.id.hello);
-        Button activeButton = (Button) findViewById(R.id.active);
-        Button dlButton = (Button) findViewById(R.id.downloadParams);
-        Button downParaProgButton = (Button) findViewById(R.id.downloadParamsWithProgress);
-        Button signInButton = (Button) findViewById(R.id.signIn);
         mProgressBar = (ProgressBar) findViewById(R.id.downloadProgressBar);
-        Button dealButton = (Button) findViewById(R.id.deal);
         //输入框
         mMerText = (EditText) findViewById(R.id.merCode);
         mTermText = (EditText) findViewById(R.id.termCode);
         //控件监听事件
-        activeButton.setOnClickListener(this);
-        dlButton.setOnClickListener(this);
-        downParaProgButton.setOnClickListener(this);
-        signInButton.setOnClickListener(this);
-        dealButton.setOnClickListener(this);
+        findViewById(R.id.active).setOnClickListener(this);
+        findViewById(R.id.downloadParams).setOnClickListener(this);
+        findViewById(R.id.downloadParamsWithProgress).setOnClickListener(this);
+        findViewById(R.id.signIn).setOnClickListener(this);
+        findViewById(R.id.deal).setOnClickListener(this);
         findViewById(R.id.bills).setOnClickListener(this);
         findViewById(R.id.settle).setOnClickListener(this);
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    /*
-    @author：lixia   the common methond of clicking button
-    */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -117,18 +74,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * @author:lixia  结算
+     * @author:lixia 结算
      */
     private void settle() {
-       int batchNum=CILSDK.getBatchNum();
-        String batchNumTemp=String.valueOf(batchNum);
+        int batchNum = CILSDK.getBatchNum();
+        String batchNumTemp = String.valueOf(batchNum);
         CILSDK.transSettleAsync(batchNumTemp, new Callback<CILResponse>() {
             @Override
             public void onResult(final CILResponse response) {
-                //打印结算单
-                Intent intent = new Intent(MainActivity.this, SettleResultActivity.class);
-                intent.putExtra(ResultActivity.EXCHANGE_RESULT, response.getData());
-                startActivity(intent);
+                if (response.getStatus() == 0) {
+                    Intent intent = new Intent(MainActivity.this, SettleResultActivity.class);
+                    intent.putExtra(ResultActivity.EXCHANGE_RESULT, response.getData());
+                    startActivity(intent);
+                } else {
+                    textChange("结算出错");
+                }
             }
 
             @Override
@@ -137,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //结算出错
             }
         });
-
     }
 
     /**
@@ -145,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private void bills() {
         startActivity(new Intent(this, BillActivity.class));
-
     }
 
     /*
@@ -186,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onResult(CILResponse cilResponse) {
 
                 if (cilResponse.getStatus() == 0) {
-                    //激活成功\
+                    //激活成功
                     textChange("激活成功");
                 } else {
                     //激活失败

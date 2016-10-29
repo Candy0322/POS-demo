@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="检索参考号"
+        android:maxLength="12"
         android:textSize="10dp" />
 
     <EditText
@@ -30,6 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="原交易授权码"
+        android:maxLength="6"
         android:textSize="10dp" />
 
     <EditText
@@ -37,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="交易时间"
+        android:maxLength="4"
         android:textSize="10dp" />
 
     <EditText
@@ -44,6 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="交易凭证号"
+        android:maxLength="6"
         android:textSize="10dp" />
 
     <EditText
@@ -51,6 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="批次号"
+        android:maxLength="6"
         android:textSize="10dp" />
 
     <EditText
@@ -58,6 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="卡号"
+        android:maxLength="16"
         android:textSize="10dp" />
 
 
