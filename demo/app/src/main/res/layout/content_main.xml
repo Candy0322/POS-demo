@@ -7,83 +7,91 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context="com.example.lixia.demo.MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0606ff"
+        android:background="#000000"
         android:orientation="horizontal">
-    <EditText
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:hint="商户号"
-        android:layout_marginRight="8dp"
-        android:background="#ffffff"
-        android:id="@+id/merCode"/>
+
         <EditText
+            android:id="@+id/merCode"
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="8dp"
-            android:hint="终端号"
-            android:background="#ffffff"
             android:layout_height="wrap_content"
-            android:id="@+id/termCode"/>
+            android:layout_marginRight="2dp"
+            android:layout_weight="1"
+            android:maxLength="15"
+            android:background="#ffffff"
+            android:hint="商户号" />
+
+        <EditText
+            android:id="@+id/termCode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:maxLength="8"
+            android:background="#ffffff"
+            android:hint="终端号" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/size_number"
-        android:text="结果展示" />
+        android:text="结果展示"
+        android:textSize="@dimen/size_number" />
 
 
     <ProgressBar
+        android:id="@+id/downloadProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/downloadProgressBar"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
     <Button
-        android:text="激活"
+        android:id="@+id/active"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/active" />
+        android:text="激活" />
 
     <Button
-        android:text="参数下载"
+        android:id="@+id/downloadParams"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/downloadParams" />
+        android:text="参数下载" />
 
     <Button
-        android:text="终端秘钥下载"
+        android:id="@+id/downloadParamsWithProgress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/downloadParamsWithProgress" />
-    <Button
-        android:text="签到"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/signIn" />
-    <Button
-        android:text="发起交易"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/deal" />
-    <Button
-        android:text="账单"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/bills" />
-    <Button
-        android:text="结算"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/settle" />
+        android:text="终端秘钥下载" />
 
+    <Button
+        android:id="@+id/signIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="签到" />
+
+    <Button
+        android:id="@+id/deal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发起交易" />
+
+    <Button
+        android:id="@+id/bills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="账单" />
+
+    <Button
+        android:id="@+id/settle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="结算" />
 
 
 </LinearLayout>

@@ -1,12 +1,11 @@
 package com.example.lixia.demo;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,23 +36,16 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         mTracenum = (EditText) findViewById(R.id.tracenum);
         mBatchNum = (EditText) findViewById(R.id.batchNum);
         mRevAuthCode = (EditText) findViewById(R.id.revAuthCode);
-        mCardNum= (EditText) findViewById(R.id.cardNum);
-
-        Button cardDealButton = (Button) findViewById(R.id.cardDeal);
-        Button balanceButton = (Button) findViewById(R.id.balance);
-        Button preAuthButton = (Button) findViewById(R.id.preAuth);
-        Button returnQRButton = (Button) findViewById(R.id.returnQr);
-        Button revokeQRButton = (Button) findViewById(R.id.revokeQr);
-        Button revokeConsumeButton = (Button) findViewById(R.id.revokeConsume);
+        mCardNum = (EditText) findViewById(R.id.cardNum);
 
         //设置监听
-        cardDealButton.setOnClickListener(this);
-        balanceButton.setOnClickListener(this);
-        preAuthButton.setOnClickListener(this);
+        findViewById(R.id.cardDeal).setOnClickListener(this);
+        findViewById(R.id.balance).setOnClickListener(this);
+        findViewById(R.id.preAuth).setOnClickListener(this);
+        findViewById(R.id.returnQr).setOnClickListener(this);
+        findViewById(R.id.revokeQr).setOnClickListener(this);
+        findViewById(R.id.revokeConsume).setOnClickListener(this);
         findViewById(R.id.consumeQr).setOnClickListener(this);
-        returnQRButton.setOnClickListener(this);
-        revokeQRButton.setOnClickListener(this);
-        revokeConsumeButton.setOnClickListener(this);
         findViewById(R.id.returnConsume).setOnClickListener(this);
         findViewById(R.id.revokePreAuth).setOnClickListener(this);
         findViewById(R.id.preAuthComplete).setOnClickListener(this);
@@ -76,7 +68,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 revokeConsume();
                 break;
             case R.id.balance:
-                mMoneyText.setText("0.01");
+                mMoneyText.setText("0.001");
                 startDeal("checkBalance");
                 break;
             case R.id.preAuth:
@@ -114,7 +106,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
 
     /**
-     * @author:lixia  小费撤销
+     * @author:lixia 小费撤销
      */
     private void revokeTip() {
         String amout = mMoneyText.getText().toString();
@@ -123,9 +115,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         String tracenum = mTracenum.getText().toString();
         String batchNum = mBatchNum.getText().toString();
         String referenceNumber = mReferenceNumber.getText().toString();
-        String cardNum=mCardNum.getText().toString();
+        String cardNum = mCardNum.getText().toString();
         if (TextUtils.isEmpty(transDatetime) || TextUtils.isEmpty(revAuthCode) || TextUtils.isEmpty(tracenum) || TextUtils.isEmpty(batchNum) || TextUtils.isEmpty(amout)
-                ||TextUtils.isEmpty(referenceNumber)||TextUtils.isEmpty(cardNum)) {
+                || TextUtils.isEmpty(referenceNumber) || TextUtils.isEmpty(cardNum)) {
             Toast.makeText(this, "金额/授权号/交易时间/凭证号/批次号/参考号/卡号不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -162,9 +154,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         String tracenum = mTracenum.getText().toString();
         String batchNum = mBatchNum.getText().toString();
         String referenceNumber = mReferenceNumber.getText().toString();
-        String cardNum=mCardNum.getText().toString();
+        String cardNum = mCardNum.getText().toString();
         if (TextUtils.isEmpty(transDatetime) || TextUtils.isEmpty(revAuthCode) || TextUtils.isEmpty(tracenum) || TextUtils.isEmpty(batchNum) || TextUtils.isEmpty(amout)
-                ||TextUtils.isEmpty(referenceNumber)||TextUtils.isEmpty(cardNum)) {
+                || TextUtils.isEmpty(referenceNumber) || TextUtils.isEmpty(cardNum)) {
             Toast.makeText(this, "金额/授权号/交易时间/凭证号/批次号/参考号/卡号不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -202,7 +194,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         String batchNum = mBatchNum.getText().toString();
         String referenceNumber = mReferenceNumber.getText().toString();
 
-        if (TextUtils.isEmpty(transDatetime) || TextUtils.isEmpty(revAuthCode) || TextUtils.isEmpty(tracenum) || TextUtils.isEmpty(batchNum) || TextUtils.isEmpty(amout)||TextUtils.isEmpty(referenceNumber)) {
+        if (TextUtils.isEmpty(transDatetime) || TextUtils.isEmpty(revAuthCode) || TextUtils.isEmpty(tracenum) || TextUtils.isEmpty(batchNum) || TextUtils.isEmpty(amout) || TextUtils.isEmpty(referenceNumber)) {
             Toast.makeText(this, "金额/授权号/交易时间/凭证号/批次号/参考号不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
