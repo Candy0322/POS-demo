@@ -87,13 +87,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent.putExtra(ResultActivity.EXCHANGE_RESULT, response.getData());
                     startActivity(intent);
                 } else {
-                    textChange("结算出错");
+                    textChange(response.getMessage());
                 }
             }
 
             @Override
             public void onError(Parcelable cilRequest, Exception e) {
-                textChange("结算出错");
+                textChange(e.getMessage());
                 //结算出错
             }
         });
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textChange("激活成功");
                 } else {
                     //激活失败
-                    textChange("激活失败");
+                    textChange(cilResponse.getMessage());
                 }
             }
 
@@ -180,14 +180,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     textChange("参数下载成功");
                 } else {
                     //参数下载错误
-                    textChange("参数下载错误");
+                    textChange(response.getMessage());
                 }
             }
 
             @Override
             public void onError(Parcelable p, Exception e) {
                 //下载出错
-                textChange("下载出错");
+                textChange(e.getMessage());
             }
         });
 
@@ -222,10 +222,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onError(Parcelable p, Exception e) {
                 //下载密钥出错
-                mTextView.setText("秘钥下载出错");
+                mTextView.setText(e.getMessage());
             }
         });
-
     }
 
     /*
@@ -243,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onError(Parcelable cilRequest, Exception e) {
                 //签到出错
-                textChange("签到出错");
+                textChange(e.getMessage());
             }
         });
 
